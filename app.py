@@ -96,6 +96,8 @@ def main():
     if st.button("Remove Last Message") and messages:
         messages.pop()
     
+    st.session_state['mesageslist'] = messages
+    
     # Display chat messages
     st.subheader("Chat Messages")
     for message in messages:
