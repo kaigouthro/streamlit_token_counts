@@ -101,11 +101,13 @@ def main():
     # Display chat messages
     st.subheader("Chat Messages")
     for message in messages:
-        if "name" in message:
-            st.write(f"{message['name']} ({message['role']}): {message['content']}")
-        else:
-            st.write(f"{message['role']}: {message['content']}")
-    
+        with st.chat_message(f"{message['role']}"):           
+            if "name" not in message:
+                st.write(message['content'])
+            else:
+                st.write(f"{message['name']   }:")
+                st.write(f"{message['content']}" )
+        
     selected_model = st.selectbox("Model", ["gpt-3.5-turbo", "gpt-4"])
     
     # Display the token count based on the selected model
