@@ -45,12 +45,7 @@ def main():
     st.title("Message Token Counter")
     st.write("Count the number of tokens used by a list of messages.")
     
-    example_messages = st.session_state.get('example', st.empty())
-    
-    with example_messages.container():
-        example_messages.header("Example Messages")
-       
-        example_messages.add_rows([
+    messages = st.session_state.get('mesageslist', [
             {
                 "role": "system",
                 "content": "You are a helpful, pattern-following assistant that translates corporate jargon into plain English.",
@@ -78,10 +73,8 @@ def main():
             {
                 "role": "user",
                 "content": "This late pivot means we don't have time to boil the ocean for the client deliverable.",
-            },
+            }
         ])
-    
-    messages = []
     
     # Create message input
     with st.form(key="message_input"):
