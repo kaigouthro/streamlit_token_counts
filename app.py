@@ -104,7 +104,7 @@ def main():
         else:
             st.write(f"{message['role']}: {message['content']}")
     
-    selected_model = st.sidebar.selectbox("Model", ["gpt-3.5-turbo", "gpt-4"])
+    selected_model = st.selectbox("Model", ["gpt-3.5-turbo", "gpt-4"])
     
     # Display the token count based on the selected model
     token_count = num_tokens_from_messages(messages, model=selected_model)
