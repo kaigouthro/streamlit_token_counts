@@ -76,6 +76,8 @@ def main():
             }
         ])
     
+    selected_model = st.selectbox("Model", ["gpt-3.5-turbo", "gpt-4"])
+    
     # Create message input
     with st.form(key="message_input"):
         st.header("Create Message")
@@ -108,11 +110,10 @@ def main():
                 st.write(f"{message['name']   }:")
                 st.write(f"{message['content']}" )
         
-    selected_model = st.selectbox("Model", ["gpt-3.5-turbo", "gpt-4"])
     
     # Display the token count based on the selected model
     token_count = num_tokens_from_messages(messages, model=selected_model)
-    st.markdown(f"# Token Count for Model '{selected_model}': {token_count}")
+    st.markdown(f"# Token Count for Model '{selected_model}': :green[{token_count}]")
     
 if __name__ == "__main__":
     main()
