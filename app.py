@@ -51,22 +51,22 @@ def main():
                 "content": "You are a helpful, pattern-following assistant that translates corporate jargon into plain English.",
             },
             {
-                "role": "system",
+                "role": "user",
                 "name": "example_user",
                 "content": "New synergies will help drive top-line growth.",
             },
             {
-                "role": "system",
+                "role": "assistant",
                 "name": "example_assistant",
                 "content": "Things working well together will increase revenue.",
             },
             {
-                "role": "system",
+                "role": "ai",
                 "name": "example_user",
                 "content": "Let's circle back when we have more bandwidth to touch base on opportunities for increased leverage.",
             },
             {
-                "role": "system",
+                "role": "assistant",
                 "name": "example_assistant",
                 "content": "Let's talk later when we're less busy about how to do better.",
             },
