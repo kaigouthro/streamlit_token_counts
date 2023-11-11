@@ -39,13 +39,17 @@ def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613"):
     num_tokens += 3  # every reply is primed with <|im_start|>assistant<|im_sep|>
     return num_tokens
 
+
+
 def main():
     st.title("Message Token Counter")
     st.write("Count the number of tokens used by a list of messages.")
     
-    example_messages = st.sidebar.empty()
+    example_messages = st.session_state.get('example', st.empty())
+    
     with example_messages.container():
         example_messages.header("Example Messages")
+       
         example_messages.add_rows([
             {
                 "role": "system",
